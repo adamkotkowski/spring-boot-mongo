@@ -25,7 +25,9 @@ public class MongotestController {
 
     @RequestMapping(value = "people", method = RequestMethod.GET)
     public List<Person> getPeople(@RequestParam("name") String name){
-        return peopleRepository.findByLastName(name);
+        return peopleRepository.queryByNames(name);
     }
+
+
 
 }
